@@ -13,8 +13,9 @@ body = {text:body_text,choices:body_choices,align:"center",color:"white"}
 footer_text = "Press q to quit, s to search again"
 footer = {text:footer_text,align:"center",color:blue}
 menu = Menu.new(header:header, body:body, footer:footer)
-
-
+menu.border_color = :green
+system('clear')
+menu.display_menu
 
 
 table = Terminal::Table.new :rows => rows
