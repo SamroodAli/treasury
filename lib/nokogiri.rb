@@ -1,4 +1,8 @@
 require "open-uri"
 require "nokogiri"
+queries = []
 doc = Nokogiri::HTML(URI.open("https://rubygems.org/search?query=terminal"))
-doc.css("gems__gem","h2").each {|h2| puts h2.content}
+doc.css("gems__gem__info","h2").each do |a|
+  queries << a.content
+end
+puts queries
