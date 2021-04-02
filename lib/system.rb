@@ -14,11 +14,15 @@ def system_interface(header_text)
     end
   when '4'
     system("ri #{header_text}")
-  else
+  when '5'
     uri = "https://rubygems.org/gems/#{header_text}"
     Launchy.open(uri) do |exception|
       puts "Attempted to open #{uri} and failed because #{exception}"
       system('exit')
     end
+  case 'q'
+    false
+  case 's'
+    false
   end
 end
