@@ -14,6 +14,7 @@ class GemData
   end
 
   def menu_array
-    [@name, description]
+    body = "#{@description} \n\n version: #{@version} \n\n downloads: #{@downloads}"
+    [@name, body]
   end
 end
