@@ -12,10 +12,6 @@ doc.css('.gems__gem').each do |query|
   downloads_count = query.css(".gems__gem__downloads__count").text.split[0]
   gems_info = query.css('.gems__gem__info')
   description = gems_info.css(".gems__gem__desc").text
-  name_and_version_info = gems_info.css('.gems__gem__name').each do |query|
-    content = query.text
-    name = content.split[0]
-    version = content.split[1]
-    p [name,version,description,downloads_count]
-  end
+  name,version = gems_info.css('.gems__gem__name').text.split
+  p [name,version,description, downloads_count]
 end
