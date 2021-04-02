@@ -8,6 +8,7 @@ def display_results
   puts table
   puts "enter a gem index"
   user_input = gets.chomp.to_i
+  rows = query_results('terminal').map(&:menu_array)
   gem = rows[user_input]
   display_menu(gem)
 end
