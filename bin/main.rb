@@ -2,7 +2,6 @@ require_relative('./../lib/nokogiri')
 require "terminal-table"
 require "terminal-basic-menu"
 
-rows = query_results('terminal').map{ |query_items| query_items.menu_array}
 # 
 
 gem = rows[0]
@@ -19,5 +18,11 @@ system('clear')
 menu1.display_menu
 
 
-table = Terminal::Table.new :rows => rows
-puts table
+
+def display results
+  rows = query_results('terminal').map{ |query_items| query_items.menu_array}
+  table = Terminal::Table.new :rows => rows
+  puts table
+
+end
+
