@@ -10,6 +10,10 @@ def display_menu(gem)
   menu1 = Menu.new(header: header, body: body, footer: footer)
   menu1.border_color = :green
   menu1.display_menu
+  system_interface
+end
+
+def system_interface
   user_input = gets.chomp
   case user_input
   when '1'
@@ -30,4 +34,5 @@ def display_menu(gem)
       system('exit')
     end
   end
+  return user_input
 end

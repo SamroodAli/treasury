@@ -15,7 +15,6 @@ def display_results(search)
   display_menu(gem)
 end
 
-
 puts 'hello, what dependency are you looking for ?'
 user_search = gets.chomp
 display_results(user_search)
