@@ -12,4 +12,8 @@ class GemData
   def values_array
     [@index,@name,@version,@downloads]
   end
+
+  def menu_array
+    [@name,description]
+  end
 end
