@@ -2,11 +2,11 @@ require_relative('./../lib/nokogiri')
 require 'terminal-table'
 require 'terminal-basic-menu'
 
-def display_results
-  rows = query_results('terminal').map(&:values_array)
+def display_results(search)
+  rows = query_results(search).map(&:values_array)
   table = Terminal::Table.new rows: rows
   puts table
-  puts "enter a gem index"
+  puts 'enter a gem index'
   user_input = gets.chomp.to_i
   rows = query_results('terminal').map(&:menu_array)
   gem = rows[user_input]
@@ -26,4 +26,4 @@ def display_menu(gem)
   menu1.display_menu
 end
 
-display_results
+display_results(search)
