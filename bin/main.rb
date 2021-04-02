@@ -4,7 +4,9 @@ require "terminal-basic-menu"
 
 rows = query_results('terminal').map{ |query_items| query_items.values_array}
 
-query_item = rows[0]
+gem = rows[0]
+header_text = gem.name
+header = {text:header_text}
 
 table = Terminal::Table.new :rows => rows
 puts table
