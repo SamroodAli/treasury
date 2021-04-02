@@ -18,7 +18,7 @@ def display_menu(gem)
   header_text = gem[0]
   header = { text: header_text, color: :red }
   body_text = gem[1]
-  body_choices = ['Install this Gem', 'View documentation', 'go to this Gem website']
+  body_choices = ['Install this Gem', 'Read ri documentation if available', 'go to this Gem website']
   body = { text: body_text, choices: body_choices, align: 'center', color: :white }
   footer_text = 'Press q to quit, s to search again'
   footer = { text: footer_text, align: 'center', color: :blue }
