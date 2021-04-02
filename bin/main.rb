@@ -1,6 +1,7 @@
 require_relative('./../lib/nokogiri')
 require 'terminal-table'
 require 'terminal-basic-menu'
+require 'launchy'
 
 def display_results(search)
   rows = query_results(search).map(&:values_array)
@@ -26,10 +27,16 @@ def display_menu(gem)
   menu1.display_menu
   user_input = gets.chomp
   case user_input
-  when "1"
+  when '1'
     system("gem install #{header_text}")
+  when '2'
+    system("ri #{header_text}")
   else
-    system('exit')
+    uri = "https://rubygems.org/gems/#{header_text}"
+    Launchy.open(uri) do |exception|
+      puts "Attempted to open #{uri} and failed because #{exception}"
+      system('exit')
+    end
   end
 end
 
