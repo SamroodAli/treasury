@@ -1,5 +1,5 @@
 require 'terminal-basic-menu'
-require_relative('./system.rb')
+require_relative('./system')
 
 def display_menu(gem)
   header_text = gem[0]
@@ -21,5 +21,3 @@ def display_menu(gem)
   menu1.display_menu
   display_menu(gem) unless system_interface(header_text)
 end
-
-

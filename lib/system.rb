@@ -2,6 +2,12 @@ require 'launchy'
 
 def system_interface(header_text)
   user_input = gets.chomp
+  if user_input.is_a?(Integer)
+    gem_interface(header_text,user_input)
+  end
+end
+
+def gem_interface(header_text,user_input)
   case user_input
   when '1'
     system("gem install #{header_text}")
@@ -20,9 +26,6 @@ def system_interface(header_text)
       puts "Attempted to open #{uri} and failed because #{exception}"
       system('exit')
     end
-  case 'q'
-    false
-  case 's'
-    false
   end
+  true
 end

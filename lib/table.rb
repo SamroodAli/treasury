@@ -1,5 +1,5 @@
 require 'terminal-table'
-require_relative './menu.rb'
+require_relative './menu'
 
 def display_results(search)
   rows = query_results(search).map(&:values_array)
