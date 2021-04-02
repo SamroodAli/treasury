@@ -1,7 +1,8 @@
 class GemData
   attr_reader :name, :version, :description, :downloads
 
-  def initialize(name, version, description, downloads)
+  def initialize(index,name, version, description, downloads)
+    @index = index
     @name = name
     @version = version
     @description = description
@@ -9,6 +10,6 @@ class GemData
   end
 
   def values_array
-    [@name,@version,@downloads]
+    [@index,@name,@version,@downloads]
   end
 end
