@@ -24,9 +24,15 @@ def display_menu(gem)
   menu1 = Menu.new(header: header, body: body, footer: footer)
   menu1.border_color = :green
   menu1.display_menu
+  user_input = gets.chomp
+  case user_input
+  when "1"
+    system("gem install #{header_text}")
+  else
+    system('exit')
+  end
 end
 
-puts "hello, what dependency are you looking for ?"
+puts 'hello, what dependency are you looking for ?'
 user_search = gets.chomp
 display_results(user_search)
-
