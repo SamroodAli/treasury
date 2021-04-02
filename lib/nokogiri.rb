@@ -2,8 +2,8 @@ require 'open-uri'
 require 'nokogiri'
 require_relative './gem'
 
-def query_results
-  doc = Nokogiri::HTML(URI.open('https://rubygems.org/search?query=music'))
+def query_results(search)
+  doc = Nokogiri::HTML(URI.open("https://rubygems.org/search?query=#{search}"))
   doc.css('.gems__gem').map { |query| GemData.new(*query_data(query)) }
 end
 
