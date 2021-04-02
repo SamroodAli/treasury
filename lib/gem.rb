@@ -7,4 +7,8 @@ class GemData
     @description = description
     @downloads = downloads
   end
+
+  def values_array
+    [@name,@version,@downloads]
+  end
 end
