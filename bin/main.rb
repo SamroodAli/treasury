@@ -8,6 +8,7 @@ gem = rows[0]
 header_text = gem.name
 header = {text:header_text,color:red}
 body_text = gem.description
+body_choices = ['Install gem','View documentation','go to gem website']
 
 table = Terminal::Table.new :rows => rows
 puts table
