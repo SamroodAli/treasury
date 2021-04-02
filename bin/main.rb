@@ -2,11 +2,13 @@ require_relative('./../lib/nokogiri')
 require "terminal-table"
 require "terminal-basic-menu"
 
-rows = query_results('terminal').map{ |query_items| query_items.values_array}
+rows = query_results('terminal').map{ |query_items| query_items.menu_array}
 # 
-header_text = 'app'
+
+gem = rows[0]
+header_text = gem[0]
 header = {text:header_text,color: :red}
-body_text = 'here is gping tp dems sdeded'
+body_text = gem[1]
 body_choices = ['Install gem','View documentation','go to gem website']
 body = {text:body_text,choices:body_choices,align:"center",color: :white}
 footer_text = "Press q to quit, s to search again"
@@ -17,5 +19,5 @@ system('clear')
 menu1.display_menu
 
 
-# table = Terminal::Table.new :rows => rows
-# puts table
+table = Terminal::Table.new :rows => rows
+puts table
