@@ -8,7 +8,7 @@ def display_results(search)
   puts table
   puts 'enter a gem index'
   user_input = gets.chomp.to_i
-  rows = query_results('terminal').map(&:menu_array)
+  rows = query_results(search).map(&:menu_array)
   gem = rows[user_input]
   display_menu(gem)
 end
@@ -26,4 +26,7 @@ def display_menu(gem)
   menu1.display_menu
 end
 
-display_results(search)
+puts "hello, what dependency are you looking for ?"
+user_search = gets.chomp
+display_results(user_search)
+
