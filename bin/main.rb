@@ -6,7 +6,10 @@ def display_results
   rows = query_results('terminal').map(&:values_array)
   table = Terminal::Table.new rows: rows
   puts table
-  rows
+  puts "enter a gem index"
+  user_input = gets.chomp.to_i
+  gem = rows[user_input]
+  display_menu(gem)
 end
 
 def display_menu(gem)
@@ -22,6 +25,4 @@ def display_menu(gem)
   menu1.display_menu
 end
 
-rows = query_results('terminal').map(&:menu_array)
-gem = rows[1]
-display_menu(gem)
+display_results
