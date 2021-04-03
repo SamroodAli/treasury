@@ -1,4 +1,5 @@
 require 'launchy'
+require_relative("./CONSTANTS.rb")
 
 def system_interface(header_text)
   user_input = gets.chomp
@@ -31,8 +32,8 @@ end
 
 
 def launch_website(gem) do
-    uri = "https://rubygems.org/gems/#{gem}"
-
+    uri = RUBY_WEBSITE + gem
+    
     Launchy.open(uri) do |exception|
       puts "Attempted to open #{uri} and failed because #{exception}"
       system('exit')
