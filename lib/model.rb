@@ -21,6 +21,12 @@ class Model
       @index = @index == @size - 1 ? 0 : @index + 1
       @current_gem = @gems[@index]
     end
+
+    def previous_gem
+      @index = @index == 0 ? @size - 1: @index - 1
+      @current_gem = @gems[@index]
+    end
+
   private
 
   # Nokogiri selectors destrucuring to array of gems

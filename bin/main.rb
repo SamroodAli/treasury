@@ -29,10 +29,11 @@ def start
       valid = true
       start
     elsif user =="l"
-      gem = model.next_gem
+      model.next_gem
       view.menu model.current_gem
     elsif user=='h'
-
+      model.previous_gem
+      view.menu model.current_gem
     elsif user.to_i.between?(1, 4)
       SystemAPI.new gem.name, user
       view.menu model.current_gem
