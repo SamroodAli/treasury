@@ -28,7 +28,7 @@ class View
 
   def footer_config
     footer_text = MENU_FOOTER_OPTIONS
-    { text: footer_text, align: 'center', color: :blue }
+    { text: footer_text, align: 'left', color: :blue }
   end
 
   def menu_config(gem)

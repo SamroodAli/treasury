@@ -23,22 +23,22 @@ def start
   valid = false
   until valid
     user = user_input
+    system('clear')
     if user == 'q'
       valid = true
     elsif user == 's'
       valid = true
       start
-    elsif user =="l"
+    elsif user == 'l'
       model.next_gem
       view.menu model.current_gem
-    elsif user=='h'
+    elsif user == 'h'
       model.previous_gem
       view.menu model.current_gem
     elsif user.to_i.between?(1, 4)
-      SystemAPI.new gem.name, user
+      SystemAPI.new model.current_gem.name, user
       view.menu model.current_gem
     else
-      system('clear')
       puts 'please enter a valid option'
       view.menu model.current_gem
     end
