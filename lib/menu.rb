@@ -1,30 +1,21 @@
 require 'terminal-basic-menu'
 require_relative('./constants')
 require 'terminal-table'
-require_relative './nokogiri.rb'
+require_relative './nokogiri'
 
 class View
   def menu(gem)
     new_menu menu_config gem
   end
 
-
-def table(rows)
-  rows = rows.map(&:values_array)
-  new_table rows
-end
-
-def new_table(rows)
-    table = Terminal::Table.new rows: rows
-    puts table
-end
-
-
-
-
+  def table(results)
+    results = results.map(&:values_array)
+    new_table results
+  end
 
   private
 
+  # configurations for Menu
   def header_config(gem)
     header_text = gem[0]
     { text: header_text, color: :red }
@@ -52,5 +43,12 @@ end
     menu = Menu.new(config)
     menu.border_color = :green
     menu.display_menu
+  end
+
+  # Configurations for table
+
+  def new_table(rows)
+    table = Terminal::Table.new rows: rows
+    puts table
   end
 end

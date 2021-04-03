@@ -1,5 +1,5 @@
 require 'terminal-table'
-require_relative './nokogiri.rb'
+require_relative './nokogiri'
 
 def display_results(rows)
   rows = rows.map(&:values_array)
@@ -7,6 +7,6 @@ def display_results(rows)
 end
 
 def new_table(rows)
-    table = Terminal::Table.new rows: rows
-    puts table
+  table = Terminal::Table.new rows: rows
+  puts table
 end
