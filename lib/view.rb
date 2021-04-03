@@ -45,7 +45,7 @@ class View
 
   # Configurations for table
   def formatted(results)
-    results.map(&:values_array)
+    results.map(&:table_row_format)
   end
 
   def display_table(rows)

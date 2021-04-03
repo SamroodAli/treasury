@@ -9,11 +9,11 @@ class GemData
     @downloads = downloads
   end
 
-  def values_array
+  def table_row_format
     [@index, @name, @version, @downloads]
   end
 
-  def menu_array
+  def menu_data
     body = "#{@description} \n\n version: #{@version} \n\n downloads: #{@downloads}"
     [@name, body]
   end

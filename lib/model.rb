@@ -4,13 +4,20 @@ require_relative './gem'
 require_relative './constants'
 
 class Model
-  attr_reader :results
+  attr_reader :gems
 
   def initialize(search_input)
-    @results = fetch_gems(search_input)
+    @gems = fetch_gems(search_input)
   end
 
   private
+
+  def menu_format(user_num)
+    gem = @gems[user_num]
+    body = "#{@gem.description} \n\n version: #{@gem.version} \n\n downloads: #{@gem.downloads}"
+    [gem.name, gem.body]
+  end
+  
 
   # Nokogiri selectors destrucuring to array of gems
 

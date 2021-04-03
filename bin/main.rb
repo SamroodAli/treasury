@@ -13,8 +13,8 @@ end
 puts 'hello, what dependency are you looking for ?'
 model = Model.new user_input
 view = View.new
-view.table model.results
+view.table model.gems
 puts 'enter a gem index'
-gem = model.results[user_num].menu_array
+gem = model.gems(user_num)
 view.menu gem
 SystemAPI.new gem[0], user_input
