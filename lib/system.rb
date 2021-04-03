@@ -5,10 +5,11 @@ class SystemAPI
   def initialize(gem, user_input)
     gem_interface gem, user_input
   end
-
+  
   private
-
+  
   def gem_interface(gem, user_input)
+    puts 'i reached here'
     case user_input
     when '1'
       install_gem(gem)

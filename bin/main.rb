@@ -28,7 +28,7 @@ def start
       valid = true
       start
     elsif user.to_i.between?(1,4)
-      SystemAPI.new gem.name, user_input
+      SystemAPI.new gem.name, user
       view.menu gem
     else
       puts 'please enter a valid option'
