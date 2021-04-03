@@ -8,9 +8,10 @@ def system_interface(header_text)
 end
 
 def gem_interface(header_text,user_input)
+  gem = header_text
   case user_input
   when '1'
-    system("gem install #{header_text}")
+    install_gem(gem)
   when '2'
     system("gem uninstall #{header_text}")
   when '3'
@@ -28,4 +29,13 @@ def gem_interface(header_text,user_input)
     end
   end
   true
+end
+
+
+def install_gem(gem)
+  system("gem install #{gem}")
+end
+
+def uninstall_gem(gem)
+  system("gem uninstall #{gem}")
 end
