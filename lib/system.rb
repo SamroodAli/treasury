@@ -47,9 +47,3 @@ class SystemAPI
     end
   end
 end
-
-# def append_file(gem, file_name = 'Gemfile')
-#   open(file_name, 'a') do |file|
-#     file << "gem '#{gem}'"
-#   end
-# end
