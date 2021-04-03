@@ -2,10 +2,6 @@ require_relative('../lib/model')
 require_relative('../lib/system')
 require_relative('../lib/view')
 
-def user_input
-  gets.chomp
-end
-
 def user_validation
   valid = false
   until valid
@@ -14,7 +10,7 @@ def user_validation
     puts 'Enter q to quit'
     puts 'Enter s to search again'
     puts 'Enter anything else to select first gem'
-    gem_num = user_input
+    gem_num = gets.chomp
     case gem_num
     when 'q'
       abort
@@ -28,23 +24,36 @@ end
 
 next_turn = true
 while next_turn
+
   next_turn = false
-  system('clear')
   puts 'hello, what dependency are you looking for ?'
-  model = Model.new user_input
-  view = View.new
-  view.table model.gems
-  user_num = user_validation
-  if user_num == 's'
+  puts 'q to quit'
+
+  user_choice = gets.chomp
+
+  if user_choice =~ /[qQ]/
+    abort
+  end
+
+  model = Model.new user_choice
+
+  if model.gems.empty?
+    puts 'Sorry, no gems available for your search'
+    puts 'restarting the program'
     next_turn = true
     next
   end
+
+  view = View.new
+  view.table model.gems
+  user_num = user_validation
+
   model.gem(user_num)
   system('clear')
   view.menu model.current_gem
   valid = false
   until valid
-    user = user_input
+    user = gets.chomp
     puts user
     case user
     when 'q'
@@ -60,6 +69,7 @@ while next_turn
       if user_num == 's'
         next_turn = true
         valid = true
+        system("clear")
         next
       end
       model.gem(user_num)
