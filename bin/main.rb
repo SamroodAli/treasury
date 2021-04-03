@@ -3,22 +3,20 @@ require_relative('../lib/system')
 require_relative('../lib/view')
 
 def user_validation(view, model)
-  # system('clear')
+  system('clear')
   view.table model.gems
-  puts 'Please Enter a valid option'
   puts 'Enter an index to select a gem'
   puts 'Enter q to quit'
   puts 'Enter s to search again'
   puts 'Enter anything else to select first gem'
   gem_num = gets.chomp
-  # system('clear')
+  system('clear')
   case gem_num
   when 'q'
     abort
   when 's'
     return 's'
   end
-  puts 'i am here bro, dont u worry'
   if gem_num.to_i.between?(0, model.size - 1)
     model.gem gem_num.to_i
   else
@@ -32,7 +30,7 @@ def display_table(view, model)
   if user_num =~ /[sS]/
     next_turn = true
     valid = true
-    # system('clear')
+    system('clear')
   end
   [next_turn, valid]
 end
@@ -58,7 +56,7 @@ while next_turn
   next_turn, valid = display_table view, model
   next if next_turn
 
-  # system('clear')
+  system('clear')
   view.menu model.current_gem
   until valid
     user = gets.chomp
@@ -73,16 +71,16 @@ while next_turn
     when /[tT]/
       next_turn, valid = display_table view, model
     when /[lL]/
-      # system('clear')
+      system('clear')
       model.next_gem
     when /[hH]/
-      # system('clear')
+      system('clear')
       model.previous_gem
     when /[1234]/
       SystemAPI.new model.current_gem.name, user
     else
       puts 'Please enter a valid option'
     end
-    view.menu model.current_gem
+    view.menu model.current_gem unless next_turn
   end
 end
