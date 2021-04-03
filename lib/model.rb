@@ -11,7 +11,7 @@ class Model
     @size = @gems.size
   end
 
-  def set_gem(index)
+  def gem(index)
     @index = index
     @current_gem = @gems[index]
     @current_gem

@@ -17,31 +17,32 @@ def start
   view = View.new
   view.table model.gems
   puts 'enter a gem index'
-  model.set_gem(user_num)
+  model.gem(user_num)
   system('clear')
   view.menu model.current_gem
   valid = false
   until valid
     user = user_input
-    system('clear')
     if user == 'q'
       valid = true
+      break
     elsif user == 's'
       valid = true
       start
     elsif user == 'l'
       model.next_gem
-      view.menu model.current_gem
+    elsif user == 't'
+      view.table model.gems
+      model.gem(user_num)
     elsif user == 'h'
       model.previous_gem
-      view.menu model.current_gem
     elsif user.to_i.between?(1, 4)
       SystemAPI.new model.current_gem.name, user
-      view.menu model.current_gem
     else
       puts 'please enter a valid option'
-      view.menu model.current_gem
     end
+    system('clear')
+    view.menu model.current_gem
   end
 end
 
