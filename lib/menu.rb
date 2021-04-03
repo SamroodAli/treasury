@@ -1,10 +1,27 @@
 require 'terminal-basic-menu'
 require_relative('./constants')
+require 'terminal-table'
+require_relative './nokogiri.rb'
 
 class GemMenu
-  def initialize(gem)
+  def display_menu(gem)
     new_menu menu_config gem
   end
+
+
+def display_results(rows)
+  rows = rows.map(&:values_array)
+  new_table rows
+end
+
+def new_table(rows)
+    table = Terminal::Table.new rows: rows
+    puts table
+end
+
+
+
+
 
   private
 
