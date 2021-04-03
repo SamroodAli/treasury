@@ -2,6 +2,7 @@ require 'launchy'
 require_relative('./constants')
 
 class SystemAPI
+  
   def initialize(gem, user_input)
     gem_interface gem, user_input
   end
