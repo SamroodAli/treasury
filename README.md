@@ -69,6 +69,7 @@ Clone repository from github to your local drive by following these steps:
 
 - If there are gems, it would be listed in a table with instructions below
 ### Table interface
+![Table Menu](table_menu.png)
 
 - There are four columns with index, name of the gem, version and the number of downloads.
 * Select any gem by entering the index from the gem in the first column.
@@ -78,6 +79,9 @@ Clone repository from github to your local drive by following these steps:
 * Opening a gem will open the Gem menu
 
 ### Gem Menu
+![Gem Menu](gem_menu.png)
+
+
 - In the top is the name of the gem
 - The body has the description followed by four options
 #### Options for the gem
@@ -87,6 +91,7 @@ Clone repository from github to your local drive by following these steps:
 4. Launch a browser and open the website for the gem in rubygems.org,you can read more about the gem here.
 
 #### Navigating from the Gem Menu
+- The footer has the options for navigating around the program.
 - Enter `h` to go to previous gem
 - Enter `l` to go the next gem. (My personal favourites)
 - Enter `t` to go back to table menu
