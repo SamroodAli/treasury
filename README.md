@@ -65,7 +65,7 @@ Clone repository from github to your local drive by following these steps:
 - Enter `ruby ./bin/main.rb` in your terminal and press Enter.
 - Enter your keyword(s) for the gems, example: terminal colors
 - If no gems are found, you can try again with other keywords
-- Or press q to exit
+- Or press `q` to exit
 
 - If there are gems, it would be listed in a table with instructions below
 ### Table interface
@@ -73,8 +73,8 @@ Clone repository from github to your local drive by following these steps:
 
 - There are four columns with index, name of the gem, version and the number of downloads.
 * Select any gem by entering the index from the gem in the first column.
-* Enter 's' to search again.
-* Enter 'q' to quit
+* Enter `s` to search again.
+* Enter `q` to quit
 * Entering anything else would open the first gem
 * Opening a gem will open the Gem menu
 
