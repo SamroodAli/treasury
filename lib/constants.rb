@@ -9,4 +9,4 @@ MENU = [
   'go to this Gem website'
 ].freeze
 
-MENU_FOOTER_OPTIONS = 'Press q to quit, s to search again'
+MENU_FOOTER_OPTIONS = 'Press q to quit, s to search again'.freeze

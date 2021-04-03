@@ -9,5 +9,5 @@ def display_results(search)
   user_input = gets.chomp.to_i
   rows = query_results(search).map(&:menu_array)
   gem = rows[user_input]
-  display_menu(gem)
+  GemMenu.new(gem)
 end
