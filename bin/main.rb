@@ -7,4 +7,5 @@ puts 'hello, what dependency are you looking for ?'
 user_search = gets.chomp
 gem = display_results(user_search)
 GemMenu.new(gem)
-system_interface(gem[0])
+user_input = gets.chomp
+SystemAPI.new gem[0], user_input

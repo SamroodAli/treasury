@@ -2,12 +2,11 @@ require 'launchy'
 require_relative('./constants')
 
 class SystemAPI
-  def system_interface(header_text)
-    user_input = gets.chomp
-    gem_interface(header_text, user_input)
-  end  
-  
-  private 
+  def initialize(gem, user_input)
+    gem_interface gem, user_input
+  end
+
+  private
 
   def gem_interface(gem, user_input)
     case user_input
@@ -21,20 +20,19 @@ class SystemAPI
       launch_website(gem)
     end
   end
-  
+
   def install_gem(gem)
-    puts gem
     system("gem install #{gem}")
   end
-  
+
   def uninstall_gem(gem)
     system("gem uninstall #{gem}")
   end
-  
+
   def ri_documentation
     system("ri #{header_text}")
   end
-  
+
   def launch_website(gem)
     uri = RUBY_WEBSITE + gem
 
