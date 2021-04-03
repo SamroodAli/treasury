@@ -10,7 +10,9 @@ def user_num
   gets.chomp.to_i
 end
 
-def start
+next_turn = true
+while next_turn
+  next_turn = false
   system('clear')
   puts 'hello, what dependency are you looking for ?'
   model = Model.new user_input
@@ -23,20 +25,22 @@ def start
   valid = false
   until valid
     user = user_input
-    if user == 'q'
+    case user
+    when 'q'
       valid = true
       break
-    elsif user == 's'
+    when 's'
       valid = true
-      start
-    elsif user == 'l'
-      model.next_gem
-    elsif user == 't'
+      next_turn = true
+    when 't'
       view.table model.gems
-      model.gem(user_num)
-    elsif user == 'h'
+      gem_no = user_num
+      user_num until gem_no.between?(0...30)
+    when 'l'
+      model.next_gem
+    when 'h'
       model.previous_gem
-    elsif user.to_i.between?(1, 4)
+    when user.to_i.between?(1, 4)
       SystemAPI.new model.current_gem.name, user
     else
       puts 'please enter a valid option'
@@ -45,5 +49,3 @@ def start
     view.menu model.current_gem
   end
 end
-
-start
