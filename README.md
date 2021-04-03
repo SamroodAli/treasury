@@ -5,7 +5,7 @@
 In this project, we create a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
 <p align="center">
-  <img width="600" src="tictactoe.svg">
+  <img width="600" src="treasury.svg">
 </p>
 
 
