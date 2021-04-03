@@ -26,7 +26,7 @@ class Model
     @index = @index.zero? ? @size - 1 : @index - 1
     @current_gem = @gems[@index]
   end
-
+  
   private
 
   # Nokogiri selectors destrucuring to array of gems

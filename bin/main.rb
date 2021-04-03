@@ -13,7 +13,6 @@ def user_validation
     puts 'Enter an index to select a gem'
     puts 'Enter q to quit'
     puts 'Enter s to search again'
-    puts 'Enter v to view more in the browser'
     puts 'Enter anything else to select first gem'
     gem_num = user_input
     case gem_num
