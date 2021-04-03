@@ -1,3 +1,4 @@
+require 'colorize'
 class GemData
   attr_reader :name, :version, :description, :downloads
 
@@ -10,11 +11,11 @@ class GemData
   end
 
   def table_row_format
-    [@index, @name, @version, @downloads]
+    [@index.to_s.colorize(:light_white), @name.colorize(:cyan), @version.colorize(:light_white), @downloads.colorize(:cyan)]
   end
 
   def menu_data
-    body = "#{@description} \n\n version: #{@version} \n\n downloads: #{@downloads}"
+    body = "#{@description.colorize} \n\n version: #{@version} \n\n downloads: #{@downloads}"
     [@name, body]
   end
 end

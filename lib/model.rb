@@ -43,7 +43,7 @@ class Model
 
   def query_data(query, index)
     gems_info = query.css '.gems__gem__info'
-    description = gems_info.css('.gems__gem__desc').text
+    description = gems_info.css('.gems__gem__desc').text.gsub(/[^\w\s]/,'')
     name, version = gems_info.css('.gems__gem__name').text.split
     downloads_count = query.css('.gems__gem__downloads__count').text.split[0]
     [

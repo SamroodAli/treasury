@@ -1,6 +1,7 @@
 require 'terminal-basic-menu'
 require_relative('./constants')
 require 'terminal-table'
+require 'colorize'
 
 class View
   def menu(gem)
@@ -49,7 +50,8 @@ class View
   end
 
   def display_table(rows)
-  table = Terminal::Table.new :headings => ['Index', 'Gem Name', 'Version',"Downloads"], :rows => rows
+    headings = ['Index'.colorize(:cyan), 'Gem Name'.colorize(:light_white),'Version'.colorize(:cyan),"Downloads".colorize(:light_white)]
+    table = Terminal::Table.new :headings => headings, :rows => rows
     puts table
   end
 end
