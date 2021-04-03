@@ -14,15 +14,15 @@ def user_validation
     puts 'Enter q to quit'
     puts 'Enter s to search again'
     puts 'Enter v to view more in the browser'
-    puts "Enter anything else to select first gem"
+    puts 'Enter anything else to select first gem'
     gem_num = user_input
     case gem_num
-      when 'q'
-        abort
-      when 's'
-        return 's'
+    when 'q'
+      abort
+    when 's'
+      return 's'
     end
-    return gem_num.to_i if gem_num.to_i.between?(0,30)
+    return gem_num.to_i if gem_num.to_i.between?(0, 30)
     valid = false
   end
 end
@@ -46,6 +46,7 @@ while next_turn
   valid = false
   until valid
     user = user_input
+    puts user
     case user
     when 'q'
       valid = true
@@ -53,20 +54,28 @@ while next_turn
     when 's'
       valid = true
       next_turn = true
+      next
     when 't'
       view.table model.gems
       user_num = user_validation
+      if user_num == 's'
+        next_turn = true
+        valid = true
+        next
+      end
       model.gem(user_num)
     when 'l'
+      system('clear')
       model.next_gem
     when 'h'
+      system('clear')
       model.previous_gem
-    when user.to_i.between?(1, 4)
+    when /[1234]/
+      puts 'here'
       SystemAPI.new model.current_gem.name, user
     else
       puts 'please enter a valid option'
     end
-    system('clear')
     view.menu model.current_gem
   end
 end
