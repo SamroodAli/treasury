@@ -5,11 +5,10 @@ class SystemAPI
   def initialize(gem, user_input)
     gem_interface gem, user_input
   end
-  
+
   private
   
   def gem_interface(gem, user_input)
-    puts 'i reached here'
     case user_input
     when '1'
       install_gem(gem)
@@ -23,16 +22,19 @@ class SystemAPI
   end
 
   def install_gem(gem)
+    system('clear')
     puts "please wait while installing #{gem}"
     system("gem install #{gem}")
   end
 
   def uninstall_gem(gem)
+    system('clear')
     puts "please wait while uninstalling #{gem}"
     system("gem uninstall #{gem}")
   end
 
   def ri_documentation(gem)
+    system('clear')
     puts "please wait while loading documentation for #{gem}"
     system("ri #{gem}")
   end
