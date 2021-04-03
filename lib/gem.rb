@@ -15,7 +15,7 @@ class GemData
   end
 
   def menu_data
-    body = "#{@description.colorize} \n\n version: #{@version} \n\n downloads: #{@downloads}"
+    body = "#{@description} \n\n version: #{@version} \n\n downloads: #{@downloads}"
     [@name, body]
   end
 end

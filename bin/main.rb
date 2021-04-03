@@ -1,14 +1,15 @@
 require_relative('../lib/model')
 require_relative('../lib/system')
 require_relative('../lib/view')
+require('colorize')
 
 def user_validation(view, model)
   system('clear')
   view.table model.gems
-  puts 'Enter an index to select a gem'
-  puts 'Enter q to quit'
-  puts 'Enter s to search again'
-  puts 'Enter anything else to select first gem'
+  puts 'Enter q to quit'.colorize(:red)
+  puts 'Enter an index to select a gem'.colorize(:cyan)
+  puts 'Enter s to search again'.colorize(:yellow)
+  puts 'Enter anything else to select first gem'.colorize(:green)
   gem_num = gets.chomp
   system('clear')
   case gem_num
@@ -36,17 +37,20 @@ def display_table(view, model)
 end
 
 next_turn = true
+restart = false
 while next_turn
-
+  system('clear') unless restart
+  restart = true
   next_turn = false
-  puts 'Hello, what dependency are you looking for ?'
-  puts 'Enter q to quit'
+  puts 'Hello, what dependency are you looking for ?'.colorize(:green)
+  puts 'Enter q to quit'.colorize(:red)
   user_choice = gets.chomp
 
   abort if user_choice =~ /[qQ]/
   model = Model.new user_choice
   if model.gems.empty?
     puts 'Sorry, no gems available for your search'
+    restart = true
     puts 'Restarting the program'
     next_turn = true
     next
