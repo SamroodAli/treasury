@@ -50,8 +50,9 @@ class View
   end
 
   def display_table(rows)
-    headings = ['Index'.colorize(:cyan), 'Gem Name'.colorize(:light_white),'Version'.colorize(:cyan),"Downloads".colorize(:light_white)]
-    table = Terminal::Table.new :headings => headings, :rows => rows
+    headings = ['Index'.colorize(:cyan), 'Gem Name'.colorize(:light_white), 'Version'.colorize(:cyan),
+                'Downloads'.colorize(:light_white)]
+    table = Terminal::Table.new headings: headings, rows: rows
     puts table
   end
 end
