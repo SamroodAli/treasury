@@ -9,8 +9,7 @@ view = View.new
 view.table results
 puts 'enter a gem index'
 user_input = gets.chomp.to_i
-results = results.map(&:menu_array)
-gem = results[user_input]
+gem = results[user_input].menu_array
 
 view.menu gem
 user_input = gets.chomp

@@ -5,12 +5,11 @@ require_relative './nokogiri'
 
 class View
   def menu(gem)
-    new_menu menu_config gem
+    display_menu menu_config gem
   end
 
   def table(results)
-    results = results.map(&:values_array)
-    new_table results
+    display_table formatted results
   end
 
   private
@@ -39,15 +38,18 @@ class View
     { header: header, body: body, footer: footer }
   end
 
-  def new_menu(config)
+  def display_menu(config)
     menu = Menu.new(config)
     menu.border_color = :green
     menu.display_menu
   end
 
   # Configurations for table
+  def formatted(results)
+    results.map(&:values_array)
+  end
 
-  def new_table(rows)
+  def display_table(rows)
     table = Terminal::Table.new rows: rows
     puts table
   end
