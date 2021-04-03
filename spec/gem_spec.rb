@@ -27,6 +27,15 @@ describe 'GemData' do
     it 'should be all strings of gem data' do
       expect(subject.table_row_format.all?(String)).to be true
     end
+  end
 
+  describe '#menu_data' do
+    it 'should return an array of length 2' do
+      expect(subject.menu_data.length).to eq 2
+    end
+
+    it 'should be all strings of gem data' do
+      expect(subject.menu_data.all?(String)).to be true
+    end
   end
 end
