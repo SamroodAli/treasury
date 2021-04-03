@@ -7,11 +7,16 @@ In this project, I was asked to use ruby for scraping websites and get informati
 
 ## Project Features
 
-- Get list of gems based on your keyword(s)
-- Critical information such as version and downloads
-- Install and uninstall your selected gem
-- View documentation both from the terminal and your browser
-- Intuitive menu and table for easy selection.
+- Search for ruby gems right from your terminal.
+- Table menu listing fetched gems for easy selection.
+- Table sorted on downloads for easy decision making.
+- Critical information such as version and downloads.
+- Easily select any gem from the list or option to search again.
+- Gem Menu for the Ruby Gem where you can easily install or uninstall the gem.
+- Short description for the gem.
+- View Additional information from ri documentation for the gem from the terminal and open the rubyorgs.org gem documentation in a browser window.
+- Scroll between gems.
+- Intuitive menus for the ruby gem and table of gems for easy selection and navigation.
 
 
 ### Project Demo
