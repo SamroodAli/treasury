@@ -7,23 +7,23 @@ class Model
   attr_reader :results
 
   def initialize(search_input)
-    @results = query_results(search_input)
+    @results = fetch_gems(search_input)
   end
 
   private
 
-  def keyword(search_input)
-    search_input.split.join('+')
-  end
+  # Nokogiri selectors destrucuring to array of gems
 
-  def query_results(search)
+  def fetch_gems(search)
     url = SEARCH_URL + keyword(search)
     puts 'please wait while fetching gems'
     doc = Nokogiri::HTML(URI.open(url))
     convert_to_gems doc
   end
-
-  # Nokogiri selectors destrucuring
+  
+  def keyword(search_input)
+    search_input.split.join('+')
+  end
 
   def query_data(query, index)
     gems_info = query.css '.gems__gem__info'
