@@ -17,11 +17,7 @@ def gem_interface(header_text, user_input)
   when '4'
     system("ri #{header_text}")
   when '5'
-    uri = "https://rubygems.org/gems/#{header_text}"
-    Launchy.open(uri) do |exception|
-      puts "Attempted to open #{uri} and failed because #{exception}"
-      system('exit')
-    end
+
   end
   true
 end
@@ -32,6 +28,16 @@ end
 
 def uninstall_gem(gem)
   system("gem uninstall #{gem}")
+end
+
+
+def launch_website(gem) do
+    uri = "https://rubygems.org/gems/#{gem}"
+    
+    Launchy.open(uri) do |exception|
+      puts "Attempted to open #{uri} and failed because #{exception}"
+      system('exit')
+    end
 end
 
 # def append_file(gem, file_name = 'Gemfile')
