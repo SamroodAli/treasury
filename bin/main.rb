@@ -6,8 +6,25 @@ def user_input
   gets.chomp
 end
 
-def user_num
-  gets.chomp.to_i
+def user_validation
+  valid = false
+  until valid
+    valid = true
+    puts 'Enter an index to select a gem'
+    puts 'Enter q to quit'
+    puts 'Enter s to search again'
+    puts 'Enter v to view more in the browser'
+    puts "Enter anything else to select first gem"
+    gem_num = user_input
+    case gem_num
+      when 'q'
+        abort
+      when 's'
+        return 's'
+    end
+    return gem_num.to_i if gem_num.to_i.between?(0,30)
+    valid = false
+  end
 end
 
 next_turn = true
@@ -18,7 +35,11 @@ while next_turn
   model = Model.new user_input
   view = View.new
   view.table model.gems
-  puts 'enter a gem index'
+  user_num = user_validation
+  if user_num == 's'
+    next_turn = true
+    next
+  end
   model.gem(user_num)
   system('clear')
   view.menu model.current_gem
@@ -34,8 +55,8 @@ while next_turn
       next_turn = true
     when 't'
       view.table model.gems
-      gem_no = user_num
-      user_num until gem_no.between?(0...30)
+      user_num = user_validation
+      model.gem(user_num)
     when 'l'
       model.next_gem
     when 'h'

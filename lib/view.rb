@@ -8,7 +8,6 @@ class View
   end
 
   def table(results)
-    system('clear')
     display_table formatted results
   end
 
