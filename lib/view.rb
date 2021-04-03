@@ -1,7 +1,6 @@
 require 'terminal-basic-menu'
 require_relative('./constants')
 require 'terminal-table'
-require_relative './nokogiri'
 
 class View
   def menu(gem)
