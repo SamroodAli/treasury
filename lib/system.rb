@@ -1,5 +1,5 @@
 require 'launchy'
-require_relative("./CONSTANTS.rb")
+require_relative('./constants')
 
 def system_interface(header_text)
   user_input = gets.chomp
@@ -22,6 +22,7 @@ def gem_interface(gem, user_input)
 end
 
 def install_gem(gem)
+  puts gem
   system("gem install #{gem}")
 end
 
@@ -29,14 +30,13 @@ def uninstall_gem(gem)
   system("gem uninstall #{gem}")
 end
 
-
 def launch_website(gem)
-    uri = RUBY_WEBSITE + gem
+  uri = RUBY_WEBSITE + gem
 
-    Launchy.open(uri) do |exception|
-      puts "Attempted to open #{uri} and failed because #{exception}"
-      system('exit')
-    end
+  Launchy.open(uri) do |exception|
+    puts "Attempted to open #{uri} and failed because #{exception}"
+    system('exit')
+  end
 end
 
 # def append_file(gem, file_name = 'Gemfile')
