@@ -7,7 +7,7 @@ class SystemAPI
   end
 
   private
-  
+
   def gem_interface(gem, user_input)
     case user_input
     when '1'
@@ -40,13 +40,12 @@ class SystemAPI
   end
 
   def launch_website(gem)
+    system('exit')
     puts "please wait while launching #{gem} online documentation"
     puts 'press CONTROL and C together to exit session'
     uri = RUBY_WEBSITE + gem
-
     Launchy.open(uri) do |exception|
       puts "Attempted to open #{uri} and failed because #{exception}"
-      system('exit')
     end
   end
 end

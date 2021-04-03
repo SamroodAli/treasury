@@ -4,12 +4,23 @@ require_relative './gem'
 require_relative './constants'
 
 class Model
-  attr_reader :gems
+  attr_reader :gems , :current_gem
 
   def initialize(search_input)
     @gems = fetch_gems(search_input)
+    @size = @gems.size
   end
 
+    def set_gem(index)
+      @index = index
+      @current_gem = @gems[index]
+      @current_gem
+    end
+
+    def next_gem
+      @index = @index == @size - 1 ? 0 : @index + 1
+      @current_gem = @gems[@index]
+    end
   private
 
   # Nokogiri selectors destrucuring to array of gems
