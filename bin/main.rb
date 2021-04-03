@@ -17,4 +17,4 @@ view.table model.gems
 puts 'enter a gem index'
 gem = model.gems(user_num)
 view.menu gem
-SystemAPI.new gem[0], user_input
+SystemAPI.new gem.name, user_input

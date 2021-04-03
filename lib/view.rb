@@ -15,12 +15,12 @@ class View
 
   # configurations for Menu
   def header_config(gem)
-    header_text = gem[0]
+    header_text = gem.name
     { text: header_text, color: :red }
   end
 
   def body_config(gem)
-    body_text = gem[1]
+    body_text = gem.description
     body_choices = MENU
     { text: body_text, choices: body_choices, align: 'center', color: :white }
   end
