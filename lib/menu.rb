@@ -8,6 +8,12 @@ class GemMenu
     system_interface(gem[0])
   end
 
+  def gem_menu(gem)
+    new_menu menu_config gem
+  end
+
+  private
+
   def header_config(gem)
     header_text = gem[0]
     { text: header_text, color: :red }
@@ -31,8 +37,7 @@ class GemMenu
     { header: header, body: body, footer: footer }
   end
 
-  def gem_menu(gem)
-    config = menu_config(gem)
+  def new_menu(config)
     menu = Menu.new(config)
     menu.border_color = :green
     menu.display_menu

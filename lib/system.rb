@@ -13,10 +13,8 @@ def gem_interface(gem, user_input)
   when '2'
     uninstall_gem(gem)
   when '3'
-    install_gem(gem)
-  when '4'
     system("ri #{header_text}")
-  when '5'
+  when '4'
     launch_website(gem)
   end
 end
