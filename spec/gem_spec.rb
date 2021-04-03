@@ -20,6 +20,10 @@ describe 'GemData' do
 
 
   describe '#table_row_format' do
+    it 'should return an array' do
+      expect(subject.table_row_format).to be_a(Array)
+    end
+
     it 'should return an array of length 4' do
       expect(subject.table_row_format.length).to eq 4
     end
@@ -30,6 +34,10 @@ describe 'GemData' do
   end
 
   describe '#menu_data' do
+    it 'should return an array' do
+      expect(subject.menu_data).to be_a(Array)
+    end
+
     it 'should return an array of length 2' do
       expect(subject.menu_data.length).to eq 2
     end
