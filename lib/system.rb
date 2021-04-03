@@ -5,8 +5,7 @@ def system_interface(header_text)
   gem_interface(header_text, user_input) if user_input.is_a?(Integer)
 end
 
-def gem_interface(header_text, user_input)
-  gem = header_text
+def gem_interface(gem, user_input)
   case user_input
   when '1'
     install_gem(gem)
@@ -17,7 +16,7 @@ def gem_interface(header_text, user_input)
   when '4'
     system("ri #{header_text}")
   when '5'
-
+    launch_website(gem)
   end
   true
 end
@@ -33,7 +32,7 @@ end
 
 def launch_website(gem) do
     uri = "https://rubygems.org/gems/#{gem}"
-    
+
     Launchy.open(uri) do |exception|
       puts "Attempted to open #{uri} and failed because #{exception}"
       system('exit')
