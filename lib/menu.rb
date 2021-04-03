@@ -2,8 +2,7 @@ require 'terminal-basic-menu'
 require_relative('./system')
 
 def display_menu(gem)
-  header_text = gem[0]
-  header = { text: header_text, color: :red }
+
   body_text = gem[1]
   body_choices =
     [
@@ -20,4 +19,10 @@ def display_menu(gem)
   menu1.border_color = :green
   menu1.display_menu
   system_interface(header_text)
+end
+
+def header_config(gem)
+  header_text = gem[0]
+  header = { text: header_text, color: :red }
+  header
 end
