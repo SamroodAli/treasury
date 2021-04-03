@@ -10,16 +10,16 @@ class Model
     @gems = fetch_gems(search_input)
   end
 
-  private  
+  private
+
   # Nokogiri selectors destrucuring to array of gems
 
   def fetch_gems(search)
-    url = SEARCH_URL + keyword(search)
     puts 'please wait while fetching gems'
-    doc = Nokogiri::HTML(URI.open(url))
+    doc = Nokogiri::HTML(URI.open("https://rubygems.org/search?query=#{keyword(search)}"))
     convert_to_gems doc
   end
-  
+
   def keyword(search_input)
     search_input.split.join('+')
   end

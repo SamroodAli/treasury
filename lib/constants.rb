@@ -8,5 +8,3 @@ MENU = [
 ].freeze
 
 MENU_FOOTER_OPTIONS = 'Press q to quit, s to search again'.freeze
-
-SEARCH_URL = 'https://rubygems.org/search?query='.freeze
