@@ -11,7 +11,12 @@ class GemData
   end
 
   def table_row_format
-    [@index.to_s.colorize(:light_white), @name.colorize(:cyan), @version.colorize(:light_white), @downloads.colorize(:cyan)]
+    [
+      @index.to_s.colorize(:light_white), 
+      @name.colorize(:cyan), 
+      @version.colorize(:light_white), 
+      @downloads.colorize(:cyan)
+    ]
   end
 
   def menu_data
