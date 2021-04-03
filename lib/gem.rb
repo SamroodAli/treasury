@@ -1,6 +1,6 @@
 require 'colorize'
 class GemData
-  attr_reader :name, :version, :description, :downloads
+  attr_reader :index, :name, :version, :description, :downloads
 
   def initialize(index, name, version, description, downloads)
     @index = index
