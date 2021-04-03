@@ -16,6 +16,7 @@ def user_validation(view, model)
   when 'q'
     abort
   when 's'
+    system('clear')
     return 's'
   end
   if gem_num.to_i.between?(0, model.size - 1)
@@ -31,7 +32,6 @@ def display_table(view, model)
   if user_num =~ /[sS]/
     next_turn = true
     valid = true
-    system('clear')
   end
   [next_turn, valid]
 end
@@ -69,6 +69,7 @@ while next_turn
       valid = true
       break
     when /[sS]/
+      system('clear')
       valid = true
       next_turn = true
       next
