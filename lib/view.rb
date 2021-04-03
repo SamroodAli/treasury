@@ -49,7 +49,7 @@ class View
   end
 
   def display_table(rows)
-    table = Terminal::Table.new rows: rows
+  table = Terminal::Table.new :headings => ['Index', 'Gem Name', 'Version',"Downloads"], :rows => rows
     puts table
   end
 end
