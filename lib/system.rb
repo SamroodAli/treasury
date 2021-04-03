@@ -3,7 +3,7 @@ require_relative("./CONSTANTS.rb")
 
 def system_interface(header_text)
   user_input = gets.chomp
-  gem_interface(header_text, user_input) if user_input.is_a?(Integer)
+  gem_interface(header_text, user_input)
 end
 
 def gem_interface(gem, user_input)
@@ -19,7 +19,6 @@ def gem_interface(gem, user_input)
   when '5'
     launch_website(gem)
   end
-  true
 end
 
 def install_gem(gem)
@@ -31,9 +30,9 @@ def uninstall_gem(gem)
 end
 
 
-def launch_website(gem) do
+def launch_website(gem)
     uri = RUBY_WEBSITE + gem
-    
+
     Launchy.open(uri) do |exception|
       puts "Attempted to open #{uri} and failed because #{exception}"
       system('exit')

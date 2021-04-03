@@ -19,5 +19,5 @@ def display_menu(gem)
   menu1 = Menu.new(header: header, body: body, footer: footer)
   menu1.border_color = :green
   menu1.display_menu
-  display_menu(gem) unless system_interface(header_text)
+  system_interface(header_text)
 end
