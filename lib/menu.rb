@@ -1,14 +1,8 @@
 require 'terminal-basic-menu'
-require_relative('./system')
 require_relative('./constants')
 
 class GemMenu
   def initialize(gem)
-    gem_menu(gem)
-    system_interface(gem[0])
-  end
-
-  def gem_menu(gem)
     new_menu menu_config gem
   end
 
