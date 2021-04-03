@@ -10,15 +10,7 @@ class Model
     @gems = fetch_gems(search_input)
   end
 
-  private
-
-  def menu_format(user_num)
-    gem = @gems[user_num]
-    body = "#{@gem.description} \n\n version: #{@gem.version} \n\n downloads: #{@gem.downloads}"
-    [gem.name, gem.body]
-  end
-  
-
+  private  
   # Nokogiri selectors destrucuring to array of gems
 
   def fetch_gems(search)

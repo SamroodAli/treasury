@@ -15,6 +15,7 @@ model = Model.new user_input
 view = View.new
 view.table model.gems
 puts 'enter a gem index'
-gem = model.gems(user_num)
+gem = model.gems[user_num]
+puts gem
 view.menu gem
 SystemAPI.new gem.name, user_input
