@@ -20,7 +20,6 @@ class GemData
   end
 
   def menu_data
-    body = "#{@description} \n\n version: #{@version} \n\n downloads: #{@downloads}"
-    [@name, body]
+    [@name, @description]
   end
 end
