@@ -1,7 +1,7 @@
-require_relative('../lib/model')
-require_relative('../lib/system')
-require_relative('../lib/view')
-require('colorize')
+require 'colorize'
+require_relative '/../lib/model'
+require_relative '../lib/system'
+require_relative '../lib/view'
 
 def user_validation(view, model)
   system('clear')
