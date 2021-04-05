@@ -13,5 +13,12 @@ describe 'Model' do
       expect(subject.gems).to be_all(:gem)
     end
   end
+
+  describe '@gem' do
+    it 'should set index paramter as instance variable @index' do
+      subject.gem(10)
+      expect(subject.index).to eq(10)
+    end
+  end
   
 end
