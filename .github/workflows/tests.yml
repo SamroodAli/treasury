@@ -12,6 +12,6 @@ jobs:
       - name: Setup RSpec
         run: |
           [ -f Gemfile ] && bundle
-          gem install --no-document rspec:'~>3.9' nokogiri httparty
+          gem install --no-document rspec:'~>3.9' nokogiri terminal-basic-menu terminal-table colorize
       - name: RSpec Report
         run: rspec --force-color --format documentation

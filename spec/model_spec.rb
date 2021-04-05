@@ -8,6 +8,10 @@ describe 'Model' do
     it 'should set @gems to an array' do
       expect(subject.gems).to be_an(Array)
     end
+
+    it 'should only have gems' do
+      expect(subject.gems).to be_all(:gem)
+    end
   end
   
 end
