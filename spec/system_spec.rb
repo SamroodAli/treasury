@@ -1,8 +1,8 @@
 require 'rspec'
-require_relative '../lib/system.rb'
+require_relative '../lib/system'
 
 describe 'System' do
-  subject(:system){SystemAPI('colorize','1')}
+  subject(:system) { SystemAPI('colorize', '1') }
   describe '#initialization' do
     it 'should take in two arguments' do
       expect { system }.not_to raise_error
