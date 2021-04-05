@@ -29,8 +29,9 @@ describe 'Model' do
   describe 'next_gem' do
     context 'When not at last gem' do
       it 'should change index to index + 1' do
+        model.gem(10)
         model.next_gem
-        expect(model.index).to eq(1)
+        expect(model.index).to eq(11))
       end
     end
 
@@ -57,7 +58,6 @@ describe 'Model' do
         model.previous_gem
         expect(model.index).to eq(9)
       end
-
     end
   end
 end
