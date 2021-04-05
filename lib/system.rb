@@ -12,22 +12,22 @@ class SystemAPI
     system('clear')
     case user_input
     when '1'
-      install_gem(gem)
+      install gem
     when '2'
-      uninstall_gem(gem)
+      uninstall gem
     when '3'
-      ri_documentation(gem)
+      ri_documentation gem
     when '4'
-      launch_website(gem)
+      launch_website gem
     end
   end
 
-  def install_gem(gem)
+  def install(gem)
     puts "please wait while installing #{gem}"
     system("gem install #{gem}")
   end
 
-  def uninstall_gem(gem)
+  def uninstall(gem)
     puts "please wait while uninstalling #{gem}"
     system("gem uninstall #{gem}")
   end
