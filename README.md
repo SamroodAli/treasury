@@ -66,6 +66,7 @@ Clone repository from github to your local drive by following these steps:
 ## Running the Project
 - Open your terminal
 - Navigate to project directory
+- Enter 'bundle' in your terminal.
 - Enter `ruby ./bin/main.rb` in your terminal and press Enter.
 - Enter your keyword(s) for the gems, example: terminal colors
 - If no gems are found, you can try again with other keywords
