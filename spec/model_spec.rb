@@ -11,18 +11,18 @@ describe 'Model' do
 
   describe '@gem' do
     it 'should set index paramter as instance variable @index' do
-      subject.gem(10)
+      model.gem(10)
       expect(subject.index).to eq(10)
     end
 
     it 'should set @current_gem as as @gems[index]' do
-      subject.gem(10)
-     expect(subject.current_gem).to eq(subject.gems[10]) 
+    model.gem(10)
+    expect(subject.current_gem).to eq(model.gems[10]) 
     end
 
     it'should return current gem from the gems list' do
-      subject.gem(10)
-      expect(subject.gem).to eq(subject.gems[10])
+      model.gem(10)
+      expect(model.gem).to eq(model.gems[10])
     end
   end
 end
