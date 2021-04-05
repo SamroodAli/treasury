@@ -23,5 +23,9 @@ describe 'Model' do
     it 'should set @current_gem as as @gems[index]' do
      expect(subject.current_gem).to eq(subject.gems[10]) 
     end
+
+    it 'should return current gem from the gems list' do
+      expect(subject.gem).to eq(subject.gems[10])
+    end
   end
 end
