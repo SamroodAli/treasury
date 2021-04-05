@@ -17,7 +17,7 @@ def user_validation(view, model)
     abort
   when 's'
     system('clear')
-    return 's'
+    's'
   end
   if gem_num.to_i.between?(0, model.size - 1)
     model.gem gem_num.to_i
