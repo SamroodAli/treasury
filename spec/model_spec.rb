@@ -31,7 +31,7 @@ describe 'Model' do
       it 'should change index to index + 1' do
         model.gem(10)
         model.next_gem
-        expect(model.index).to eq(11))
+        expect(model.index).to eq(11)
       end
     end
 
