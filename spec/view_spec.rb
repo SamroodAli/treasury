@@ -7,7 +7,6 @@ describe 'View' do
   let(:model) { double('model', results: [gem, gem, gem]) }
   describe '#menu' do
     it 'should not raise issue for gem terminal-basic-menu' do
-      gem.name='colorize'
       expect { view.menu(gem) }.not_to raise_error
     end
   end
