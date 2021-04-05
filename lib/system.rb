@@ -1,5 +1,5 @@
 require 'launchy'
-require_relative('./constants')
+require_relative('./constants.rb')
 
 class SystemAPI
   def initialize(gem, user_input)

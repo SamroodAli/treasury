@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/model'
+require_relative './../lib/model.rb'
 
 describe 'Model' do
   subject(:model) { Model.new('terminal') }

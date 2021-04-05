@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/view'
+require_relative './../lib/view.rb'
 
 describe 'View' do
   subject(:view) { View.new }

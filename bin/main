@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'colorize'
 require_relative './../lib/model'
 require_relative './../lib/system'

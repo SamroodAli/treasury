@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/gem'
+require_relative './../lib/gem.rb'
 
 describe 'GemData' do
   subject(:gem) { GemData.new('0', 'colorize', '1', 'terminal colors', '11111') }

@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
-require_relative '../lib/gem'
-require_relative '../lib/constants'
+require_relative './../lib/gem.rb'
+require_relative './../lib/constants.rb'
 
 class Model
   attr_reader :gems, :current_gem, :size, :index
