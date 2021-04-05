@@ -25,4 +25,19 @@ describe 'Model' do
       expect(gem).to eq(model.gems[10])
     end
   end
+
+  describe 'next_gem' do
+    'it should change index to index + 1' do
+      model.next_gem
+      expect(model.index).to eq(1)
+    end
+
+    'it should not set index  + 1 when at last gem' do
+      last_gem = model.size - 1
+      model.gem(last_gem)
+      expect(model.index).not_to eq(last_gem + 1)
+    end
+
+
+  end
 end
