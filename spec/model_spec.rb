@@ -19,6 +19,9 @@ describe 'Model' do
       subject.gem(10)
       expect(subject.index).to eq(10)
     end
+
+    it 'should set @current_gem as as @gems[index]' do
+     expect(subject.current_gem).to eq(subject.gems[10]) 
+    end
   end
-  
 end
