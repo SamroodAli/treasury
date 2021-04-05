@@ -4,7 +4,7 @@ require_relative './gem'
 require_relative './constants'
 
 class Model
-  attr_reader :gems, :current_gem, :size
+  attr_reader :gems, :current_gem, :size, :index
 
   def initialize(search_input)
     @gems = fetch_gems(search_input)
