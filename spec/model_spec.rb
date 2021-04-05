@@ -21,8 +21,8 @@ describe 'Model' do
     end
 
     it'should return current gem from the gems list' do
-      model.gem(10)
-      expect(model.gem).to eq(model.gems[10])
+      gem = model.gem(10)
+      expect(gem).to eq(model.gems[10])
     end
   end
 end
