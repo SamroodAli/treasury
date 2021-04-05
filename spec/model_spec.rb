@@ -27,9 +27,11 @@ describe 'Model' do
   end
 
   describe 'next_gem' do
-    it 'should change index to index + 1' do
-      model.next_gem
-      expect(model.index).to eq(1)
+    context 'When not at last gem' do
+      it 'should change index to index + 1' do
+        model.next_gem
+        expect(model.index).to eq(1)
+      end
     end
 
     context 'When at last gem' do
@@ -45,6 +47,17 @@ describe 'Model' do
       it 'should set to zero for last gem' do
         expect(model.index).to be_zero
       end
+    end
+  end
+
+  describe 'previous gem' do
+    context 'When not at first gem' do
+      it 'should set index to index - 1' do
+        model.gem(10)
+        model.previous_gem
+        expect(model.index).to eq(9)
+      end
+
     end
   end
 end
