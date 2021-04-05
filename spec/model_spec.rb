@@ -3,14 +3,9 @@ require_relative '../lib/model.rb'
 
 describe 'Model' do
   subject(:model){ Model.new("terminal") }
-  let(:gem){double("gem")}
   describe '#initialize' do
     it 'should set @gems to an array' do
       expect(subject.gems).to be_an(Array)
-    end
-
-    it 'should only have gems' do
-      expect(subject.gems).to be_all(:gem)
     end
   end
 
@@ -21,10 +16,12 @@ describe 'Model' do
     end
 
     it 'should set @current_gem as as @gems[index]' do
+      subject.gem(10)
      expect(subject.current_gem).to eq(subject.gems[10]) 
     end
 
-    it 'should return current gem from the gems list' do
+    it'should return current gem from the gems list' do
+      subject.gem(10)
       expect(subject.gem).to eq(subject.gems[10])
     end
   end
