@@ -9,7 +9,7 @@ describe 'Model' do
     end
   end
 
-  describe '@gem' do
+  describe '#gem' do
     it 'should set index paramter as instance variable @index' do
       model.gem(10)
       expect(subject.index).to eq(10)
@@ -26,7 +26,7 @@ describe 'Model' do
     end
   end
 
-  describe 'next_gem' do
+  describe '#next_gem' do
     context 'When not at last gem' do
       it 'should change index to index + 1' do
         model.gem(10)
@@ -52,7 +52,7 @@ describe 'Model' do
     end
   end
 
-  describe 'previous gem' do
+  describe '#previous gem' do
     context 'When not at first gem' do
       it 'should set index to index - 1' do
         model.gem(10)

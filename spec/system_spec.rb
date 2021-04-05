@@ -1,6 +1,4 @@
 require 'rspec'
 
-describe "System" do
-
-
+describe 'System' do
 end
