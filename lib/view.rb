@@ -14,7 +14,6 @@ class View
 
   private
 
-  # configurations for Menu
   def header_config(gem)
     header_text = gem.name
     { text: header_text, color: :red }
@@ -44,7 +43,6 @@ class View
     menu.display_menu
   end
 
-  # Configurations for table
   def formatted(results)
     results.map(&:table_row_format)
   end

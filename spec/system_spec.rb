@@ -1,4 +1,5 @@
 require 'rspec'
+require_relative '../lib/system.rb'
 
 describe 'System' do
   describe '#initialization' do

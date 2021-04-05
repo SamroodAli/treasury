@@ -29,8 +29,6 @@ class Model
 
   private
 
-  # Nokogiri selectors destrucuring to array of gems
-
   def fetch_gems(search)
     puts 'please wait while fetching gems'
     doc = Nokogiri::HTML(URI.open("https://rubygems.org/search?query=#{keyword(search)}"))
