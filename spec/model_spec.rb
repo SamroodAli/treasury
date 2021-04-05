@@ -39,12 +39,14 @@ describe 'Model' do
       it 'should not set index  + 1 when at last gem' do
         last_gem = model.size - 1
         model.gem(last_gem)
+        model.next_gem
         expect(model.index).not_to eq(last_gem + 1)
       end
 
       it 'should set to zero for last gem' do
         last_gem = model.size - 1
         model.gem(last_gem)
+        model.next_gem
         expect(model.index).to be_zero
       end
     end
