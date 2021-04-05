@@ -3,7 +3,7 @@ require_relative '../lib/view'
 
 describe 'View' do
   subject(:view) { View.new }
-  let(:gem) { double('gem','name'=>'colorize') }
+  let(:gem) { double('gem','name'=>'colorize','description'=>'some description','version'=>'1','downloads'=>'4444','index'=>'20') }
   let(:model) { double('model', results: [gem, gem, gem]) }
   describe '#menu' do
     it 'should not raise issue for gem terminal-basic-menu' do
