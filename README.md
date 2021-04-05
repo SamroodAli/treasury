@@ -4,6 +4,9 @@
 
 In this project, I was asked to use ruby for scraping websites and get information. I decided to get info of ruby gems from rubygems.org. The project is capable of fetching gems right from your terminal.The gems query lists a table of gems sorted on downloads. You can select any gem from the table, scroll between gems, install them, uninstall them,view ri documentation if any or automatically open the website for the gem in the browser all right from one simple menu. Now you can view available gems for your next passion project.
 
+<p align="center">
+  <img width="600" src="treasury.svg">
+</p>
 
 ## Project Features
 
